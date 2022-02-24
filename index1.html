@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!-- populated by JS-->
+    </div>
+    <script src="./boston.js"></script>
+    <script>
+      function renderData(bostonData, container) {
+        const data = bostonData.data;
+        const len = bostonData.data.length;
+        //console.log(len);
+        //console.log(bostonData.data[0]);
+        //console.log(bostonData.data[0][18]);
+
+        function sortEarnings(a, b) {
+          return a[18] - b[18];
+        }
+        data.sort(sortEarnings);
+        data.reverse();
+        //console.log(data);
+
+        function checkEarnings(a) {
+          return a[18] < 100000;
+        }
+        let lastBigEarner = data.findIndex(checkEarnings);
+        //console.log(lastBigEarner);
+
+        let html = '';
+        for (let i = 0; i < 5; i++) {
+          html +=
+            '<tr class="data">' +
+            '<td><strong>' +
+            data[i][8] +
+            '</strong></td>' +
+            '<td>' +
+            data[i][18] +
+            '</td>' +
+            '</tr>';
+        }
+        container.innerHTML =
+          '<h2>Boston\'s Top 5 Earners:</h2><table id="topEarners"><thead><tr><th>Name</th><th>Total Earned</th></tr></thead><tbody>' +
+          html +
+          '</tbody></table>';
+
+        container.innerHTML +=
+          '<h3>Total Big Earners</h3>' +
+          '<p>The number of people working in Boston earning over $100,000 is ' +
+          lastBigEarner +
+          '.';
+/* from NextTech Assignment: 
+        function topEarners(a) {
+          return a[11] >= 200000;
+        }
+        let topEmployees = data.filter(topEarners);
+
+        let html2 = '';
+        for (let i = 0; i < topEmployees.length; i++) {
+          html2 +=
+            '<li class="post">' +
+            '<h2>' +
+            topEmployees[i][8] +
+            '</h2>' +
+            '<h3>' +
+            topEmployees[i][11] +
+            '</h3>';
+        }
+
+        container.innerHTML += '<h2>Boston\'s Bigest Earners:</h2><ul id="topEmployees">' + html2 + '</ul>';*/
+      }
+      renderData(bostonData, document.getElementById('container'));
+    </script>
+  </body>
+</html>
