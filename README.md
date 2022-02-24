@@ -1,4 +1,7 @@
-## Boston City Data Exercise
+# "Walk Boston" Big Data Exercise
+Assignment from week 5 of MIT Full Stack Professional Certificate.
+
+## Initial Goals
 The goal of this exercise is to pick out the top 5 earners in Boston (total salary + overtime) and list them out in the web page as shown below:
 Name     Total Earned 
 
