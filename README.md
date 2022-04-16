@@ -7,9 +7,9 @@
 Download a 22,000+ line data table, search for and display the following 2 objectives:
 
 1. The goal of this exercise is to pick out the top 5 earners in Boston (total salary + overtime) and list them out in the web page as shown below:
-| Name       | Total Earned |
-| ------     | ------------ |
-| First Name | $000,000     |
+| Name | Total Earned |
+| ------ | ------------ |
+| First Name | $000,000 |
 2. Next, pick out the number of people working in the city of Boston who earn over $100,000 and display it on the web page as shown below: 
 
 Number of people working in Boston earning over $100,000 is xxxx.
